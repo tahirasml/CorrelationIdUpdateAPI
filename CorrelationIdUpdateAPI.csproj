@@ -1,25 +1,100 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Utilities\**" />
-    <Content Remove="Utilities\**" />
-    <EmbeddedResource Remove="Utilities\**" />
-    <None Remove="Utilities\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Utilities\**" />
+		<Content Remove="Utilities\**" />
+		<EmbeddedResource Remove="Utilities\**" />
+		<None Remove="Utilities\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.35" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
-  </ItemGroup>
+	<ItemGroup>
+	  <Reference Include="Azure.Core">
+	    <HintPath>ExternalLibraries\Azure.Core.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Azure.Identity">
+	    <HintPath>ExternalLibraries\Azure.Identity.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Dapper">
+	    <HintPath>ExternalLibraries\Dapper.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.AspNetCore.Authentication.JwtBearer">
+	    <HintPath>ExternalLibraries\Microsoft.AspNetCore.Authentication.JwtBearer.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.AspNetCore.OpenApi">
+	    <HintPath>ExternalLibraries\Microsoft.AspNetCore.OpenApi.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+	    <HintPath>ExternalLibraries\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.Bcl.Cryptography">
+	    <HintPath>ExternalLibraries\Microsoft.Bcl.Cryptography.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.Data.SqlClient">
+	    <HintPath>ExternalLibraries\Microsoft.Data.SqlClient.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.Identity.Client">
+	    <HintPath>ExternalLibraries\Microsoft.Identity.Client.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.Identity.Client.Extensions.Msal">
+	    <HintPath>ExternalLibraries\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.IdentityModel.Abstractions">
+	    <HintPath>ExternalLibraries\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.IdentityModel.JsonWebTokens">
+	    <HintPath>ExternalLibraries\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.IdentityModel.Logging">
+	    <HintPath>ExternalLibraries\Microsoft.IdentityModel.Logging.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.IdentityModel.Protocols">
+	    <HintPath>ExternalLibraries\Microsoft.IdentityModel.Protocols.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+	    <HintPath>ExternalLibraries\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.IdentityModel.Tokens">
+	    <HintPath>ExternalLibraries\Microsoft.IdentityModel.Tokens.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.OpenApi">
+	    <HintPath>ExternalLibraries\Microsoft.OpenApi.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Microsoft.SqlServer.Server">
+	    <HintPath>ExternalLibraries\Microsoft.SqlServer.Server.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Newtonsoft.Json">
+	    <HintPath>ExternalLibraries\Newtonsoft.Json.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Swashbuckle.AspNetCore.Swagger">
+	    <HintPath>ExternalLibraries\Swashbuckle.AspNetCore.Swagger.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Swashbuckle.AspNetCore.SwaggerGen">
+	    <HintPath>ExternalLibraries\Swashbuckle.AspNetCore.SwaggerGen.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Swashbuckle.AspNetCore.SwaggerUI">
+	    <HintPath>ExternalLibraries\Swashbuckle.AspNetCore.SwaggerUI.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.ClientModel">
+	    <HintPath>ExternalLibraries\System.ClientModel.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.Configuration.ConfigurationManager">
+	    <HintPath>ExternalLibraries\System.Configuration.ConfigurationManager.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.IdentityModel.Tokens.Jwt">
+	    <HintPath>ExternalLibraries\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.Memory.Data">
+	    <HintPath>ExternalLibraries\System.Memory.Data.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.Security.Cryptography.ProtectedData">
+	    <HintPath>ExternalLibraries\System.Security.Cryptography.ProtectedData.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
 
 </Project>

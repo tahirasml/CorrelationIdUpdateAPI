@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography.Xml;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CorrelationIdUpdateAPI.Controllers
 {
@@ -16,7 +19,6 @@ namespace CorrelationIdUpdateAPI.Controllers
         {
             _configuration = configuration;
         }
-
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)
         {

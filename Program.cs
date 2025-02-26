@@ -1,16 +1,17 @@
 using CorrelationIdUpdateAPI.Services;
 using Dapper;
-using Microsoft.Data.SqlClient;
 using CorrelationIdUpdateAPI.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Microsoft.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Retrieve and decrypt the connection string
 var encryptedConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//var encrypt = ConnectionStringSecurity.Encrypt(encryptedConnectionString);
 var decryptedConnectionString = ConnectionStringSecurity.Decrypt(encryptedConnectionString); // Adjust based on your file logic
 
 //// Log decrypted connection string (for debugging only; remove in production)
@@ -47,7 +48,7 @@ builder.Services.AddAuthentication(options =>
 // Register the decrypted connection string
 builder.Services.AddSingleton(decryptedConnectionString);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+//builder.Services.AddOpenApi();
 // Add Authorization 
 builder.Services.AddAuthorization();
 // Add services to the container.
@@ -96,20 +97,20 @@ builder.Services.AddLogging(logging =>
 var app = builder.Build();
 
 //// Test database connectivity with the decrypted connection string
-//using (var scope = app.Services.CreateScope())
-//{
-//    try
-//    {
-//        Console.WriteLine("Checking database connectivity...");
-//        using var connection = new SqlConnection(decryptedConnectionString);
-//        connection.Open();
-//        Console.WriteLine("Database connection successful!");
-//    }
-//    catch (Exception ex)
-//    {
-//        Console.WriteLine($"Database connection failed: {ex.Message}");
-//    }
-//}
+using (var scope = app.Services.CreateScope())
+{
+    try
+    {
+        Console.WriteLine("Checking database connectivity...");
+        using var connection = new SqlConnection(decryptedConnectionString);
+        connection.Open();
+        Console.WriteLine("Database connection successful!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Database connection failed: {ex.Message}");
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -1,7 +1,7 @@
-﻿using CorrelationIdUpdateAPI.Cryptography;
+﻿using Microsoft.Data.SqlClient;
+using CorrelationIdUpdateAPI.Cryptography;
 using CorrelationIdUpdateAPI.Models;
 using Dapper;
-using Microsoft.Data.SqlClient;
 
 namespace CorrelationIdUpdateAPI.Services
 {
